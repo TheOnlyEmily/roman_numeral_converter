@@ -8,3 +8,6 @@ def test_that_v_converts_to_5():
 
 def test_that_x_converts_to_10():
     assert convert_atomic_roman_numeral_to_number('x') == 10
+
+def test_that_l_converts_to_50():
+    assert convert_atomic_roman_numeral_to_number('l') == 50
