@@ -1,6 +1,6 @@
 from roman_numeral_converter.atomic_conversions import convert_atomic_roman_numeral_to_number
 
-# TODO add error handling
+# TODO add exception for characters that aren't valid roman numerals 
 # TODO add functionality for dealing with capitalized atomic roman numerals (ex. I, V, X, etc.)
 
 def test_that_i_converts_to_1():
