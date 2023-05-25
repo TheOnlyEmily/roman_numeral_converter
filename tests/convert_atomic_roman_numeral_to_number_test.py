@@ -2,6 +2,7 @@ from roman_numeral_converter.atomic_conversions import convert_atomic_roman_nume
 
 # TODO add exception for characters that aren't valid roman numerals 
 # TODO add functionality for dealing with capitalized atomic roman numerals (ex. I, V, X, etc.)
+# TODO add exception for inputs that are more than one character long
 # TODO complete basic atomic numeral conversion functionality
 
 def test_that_i_converts_to_1():
