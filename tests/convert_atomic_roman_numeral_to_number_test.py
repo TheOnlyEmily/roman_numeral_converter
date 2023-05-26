@@ -3,8 +3,6 @@ import hypothesis.strategies as st
 from hypothesis import given
 from roman_numeral_converter.atomic_conversions import convert_atomic_roman_numeral_to_number, InvalidAtomicRomanNumeralError
 
-# TODO add exception for inputs that are more than one character long
-
 def test_that_i_converts_to_1():
     assert convert_atomic_roman_numeral_to_number('i') == 1
 
@@ -48,3 +46,8 @@ def lower_and_uppercase_atomic_roman_numerals(draw):
 def test_lower_and_uppercase_atomic_roman_numerals_become_same_number(lower_uppercase_pair):
     lowercase_roman_numeral, uppercase_roman_numeral = lower_uppercase_pair
     assert convert_atomic_roman_numeral_to_number(lowercase_roman_numeral) == convert_atomic_roman_numeral_to_number(uppercase_roman_numeral)
+
+@given(invalid_string=st.text(min_size=2))
+def test_strings_are_invalid_atomic_roman_numerals(invalid_string):
+    with pytest.raises(InvalidAtomicRomanNumeralError):
+        convert_atomic_roman_numeral_to_number(invalid_string)
