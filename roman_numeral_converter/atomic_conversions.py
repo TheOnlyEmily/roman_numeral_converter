@@ -9,7 +9,7 @@ class InvalidAtomicRomanNumeralError(ValueError):
 
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
     """Converts a given atomic roman numeral to an integer"""
-    match roman_numeral:
+    match roman_numeral.lower():
         case 'i':
             return 1
         case 'v':
@@ -24,5 +24,5 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
             return 500
         case 'm':
             return 1000
-        case other:
-            raise InvalidAtomicRomanNumeralError(other)
+        case _:
+            raise InvalidAtomicRomanNumeralError(roman_numeral)
