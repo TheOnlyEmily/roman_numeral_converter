@@ -19,3 +19,6 @@ def test_that_l_converts_to_50():
 
 def test_that_c_converts_to_100():
     assert convert_atomic_roman_numeral_to_number('c') == 100
+
+def test_that_d_converts_to_500():
+    assert convert_atomic_roman_numeral_to_number('d') == 500

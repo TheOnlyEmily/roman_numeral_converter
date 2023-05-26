@@ -12,3 +12,5 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
             return 50
         case 'c': 
             return 100
+        case 'd':
+            return 500
