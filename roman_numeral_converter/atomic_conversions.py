@@ -8,7 +8,12 @@ class InvalidAtomicRomanNumeralError(ValueError):
 
 
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
-    """Converts a given atomic roman numeral to an integer"""
+    """
+    Converts a given atomic roman numeral to an integer.
+    
+    :raises: InvalidAtomicRomanNumeralError when given a string that is not 
+    a lower or uppercase version of an atomic roman numeral (ex. i, v, x, etc.)
+    """
     match roman_numeral.lower():
         case 'i':
             return 1
