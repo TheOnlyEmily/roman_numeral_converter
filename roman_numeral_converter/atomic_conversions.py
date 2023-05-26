@@ -1,6 +1,5 @@
-# TODO add docstring for convert_atomic_roman_numeral_to_number
-
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
+    """Converts a given atomic roman numeral to an integer"""
     match roman_numeral:
         case 'i':
             return 1
