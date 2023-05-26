@@ -1,3 +1,12 @@
+class InvalidAtomicRomanNumeralError(ValueError):
+    """An exception raised when convert_atomic_roman_numeral_to_number is given
+    an invalid atomic roman numeral."""
+
+    def __init__(self, invalid_numeral: str, message: str="invalid atomic roman numeral") -> None:
+        super().__init__(message)
+        self.invalid_numeral = invalid_numeral
+
+
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
     """Converts a given atomic roman numeral to an integer"""
     match roman_numeral:
