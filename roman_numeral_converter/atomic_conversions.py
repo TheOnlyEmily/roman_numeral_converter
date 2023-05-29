@@ -35,7 +35,7 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
         case _:
             raise InvalidAtomicRomanNumeralError(roman_numeral)
 
-# TODO work on convert_number_to_atomic_roman_numeral until 
+# TODO work on convert_number_to_atomic_roman_numeral until it mirrors convert_atomic_roman_numeral_to_number 
 
 def convert_number_to_atomic_roman_numeral(n: int) -> str:
     """Turns an integer into its atomic roman numeral representation."""
