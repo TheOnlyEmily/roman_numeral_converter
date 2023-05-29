@@ -1,3 +1,4 @@
+# TODO Add encoder-decoder test on two atomic conversion functions 
 # TODO Add logic to InvalidAtomicNumeralError so it can give more specific messages
 
 class InvalidAtomicRomanNumeralError(ValueError):
