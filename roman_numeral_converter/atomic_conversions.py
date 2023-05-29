@@ -42,3 +42,5 @@ def convert_number_to_atomic_roman_numeral(n: int) -> str:
             return 'i'
         case 5: 
             return 'v'
+        case 10:
+            return 'x'
