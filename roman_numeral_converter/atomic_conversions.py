@@ -33,3 +33,8 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
             return 1000
         case _:
             raise InvalidAtomicRomanNumeralError(roman_numeral)
+
+
+def convert_number_to_atomic_roman_numeral(n: int) -> str:
+    """Turns an integer into its atomic roman numeral representation."""
+    ...
