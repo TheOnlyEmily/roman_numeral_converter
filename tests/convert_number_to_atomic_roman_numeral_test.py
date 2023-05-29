@@ -9,3 +9,6 @@ def test_5_converts_to_v():
 
 def test_10_converts_to_x():
     assert convert_number_to_atomic_roman_numeral(10) == 'x'
+
+def test_50_converts_to_l():
+    assert convert_number_to_atomic_roman_numeral(50) == 'l'
