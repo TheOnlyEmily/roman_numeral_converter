@@ -18,3 +18,6 @@ def test_100_converts_to_c():
 
 def test_500_converts_to_d():
     assert convert_number_to_atomic_roman_numeral(500) == 'd'
+
+def test_1000_converts_to_m():
+    assert convert_number_to_atomic_roman_numeral(1000) == 'm'

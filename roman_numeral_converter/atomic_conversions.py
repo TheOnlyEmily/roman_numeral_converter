@@ -51,3 +51,5 @@ def convert_number_to_atomic_roman_numeral(n: int) -> str:
             return 'c'
         case 500:
             return 'd'
+        case 1000:
+            return 'm'
