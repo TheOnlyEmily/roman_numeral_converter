@@ -12,3 +12,6 @@ def test_10_converts_to_x():
 
 def test_50_converts_to_l():
     assert convert_number_to_atomic_roman_numeral(50) == 'l'
+
+def test_100_converts_to_c():
+    assert convert_number_to_atomic_roman_numeral(100) == 'c'
