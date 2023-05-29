@@ -37,4 +37,8 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 
 def convert_number_to_atomic_roman_numeral(n: int) -> str:
     """Turns an integer into its atomic roman numeral representation."""
-    return 'i' 
+    match n:
+        case 1:
+            return 'i'
+        case 5: 
+            return 'v'
