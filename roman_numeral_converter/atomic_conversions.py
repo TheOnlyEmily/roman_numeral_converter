@@ -1,3 +1,5 @@
+# TODO Add logic to InvalidAtomicNumeralError so it can give more specific messages
+
 class InvalidAtomicRomanNumeralError(ValueError):
     """An exception raised when convert_atomic_roman_numeral_to_number is given
     an invalid atomic roman numeral."""
