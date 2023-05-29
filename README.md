@@ -13,7 +13,7 @@ Create a library to convert between roman numerals and numbers.
 1. Implement code that indicates if a given indo-european numeral is the result of uniform stacking. 
 1. Implement code that indicates which roman numeral was uniformly stacked to create a given indo-european numeral. 
 1. Implement code that indicates how many roman numerals where uniformly stacked to create a given indo-european numeral. 
-1. Convert a indo-european numeral to a uniform stacking of roman numerals.
+1. Convert a numbers numeral to a uniform stacking of roman numerals.
 1. Implement code that indicates if a given non-uniform subtractive stacking of roman numerals is valid.
 1. Convert a non-uniform subtractive stack of roman numerals to numbers.
 
