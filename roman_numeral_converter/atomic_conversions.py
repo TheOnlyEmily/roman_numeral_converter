@@ -1,6 +1,5 @@
 # TODO Add encoder-decoder test on two atomic conversion functions 
 # TODO Add logic to InvalidAtomicNumeralError so it can give more specific messages
-# TODO Add that InvalidAtomicRomanNumeralError provides the offending numeral as an attribute
 
 class InvalidAtomicRomanNumeralError(ValueError):
     """An exception raised when convert_atomic_roman_numeral_to_number is given
