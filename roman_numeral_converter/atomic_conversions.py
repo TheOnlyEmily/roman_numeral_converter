@@ -44,22 +44,23 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
     ...
 
-def convert_number_to_atomic_roman_numeral(n: int) -> str:
+def convert_number_to_atomic_roman_numeral(n: int, lowercase: bool=True) -> str:
     """Turns an integer into its atomic roman numeral representation."""
     match n:
         case 1:
-            return 'i'
-        case 5: 
-            return 'v'
+            return_value = 'i'
+        case 5:  
+            return_value = 'v'
         case 10:
-            return 'x'
+            return_value = 'x'
         case 50:
-            return 'l'
+            return_value = 'l'
         case 100:
-            return 'c'
+            return_value = 'c'
         case 500:
-            return 'd'
+            return_value = 'd'
         case 1000:
-            return 'm'
+            return_value = 'm'
         case _:
             raise InvalidNumberForAtomicRomanNumeralConversionError("Number can't be directly converted to atomic roman numeral.")
+    return return_value if lowercase else return_value.upper()

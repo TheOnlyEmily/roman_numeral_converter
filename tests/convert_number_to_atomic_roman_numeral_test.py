@@ -49,3 +49,13 @@ def test_raises_InvalidNumberForAtomicRomanNumberalConversionError_given_0():
 def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_values_greater_than_1000(invalid_number):
     with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
         convert_number_to_atomic_roman_numeral(invalid_number)
+
+@given(valid_number=st.sampled_from([1, 5, 10, 50, 100, 500, 1000]))
+def test_returns_uppercase_atomic_roman_numeral_when_the_lowercase_argument_is_false(valid_number):
+    lowercase = False
+    assert convert_number_to_atomic_roman_numeral(valid_number, lowercase).isupper()
+
+@given(valid_number=st.sampled_from([1, 5, 10, 50, 100, 500, 1000]))
+def test_return_lowercase_atomic_roman_numeral_when_lowercase_argument_is_true(valid_number):
+    lowercase = True
+    assert convert_number_to_atomic_roman_numeral(valid_number, lowercase).islower()
