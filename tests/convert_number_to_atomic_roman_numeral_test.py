@@ -1,4 +1,7 @@
-from roman_numeral_converter.atomic_conversions import convert_number_to_atomic_roman_numeral
+import pytest
+from hypothesis import given
+import hypothesis.strategies as st
+from roman_numeral_converter.atomic_conversions import convert_number_to_atomic_roman_numeral, InvalidNumberForAtomicRomanNumeralConversionError
 
 
 def test_1_converts_to_i():
@@ -21,3 +24,8 @@ def test_500_converts_to_d():
 
 def test_1000_converts_to_m():
     assert convert_number_to_atomic_roman_numeral(1000) == 'm'
+
+@given(invalid_number=st.integers(max_value=0))
+def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_negative_number(invalid_number):
+    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
+        convert_number_to_atomic_roman_numeral(invalid_number)

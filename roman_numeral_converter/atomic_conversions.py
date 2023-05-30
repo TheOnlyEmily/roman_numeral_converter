@@ -38,6 +38,9 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 # TODO work on convert_number_to_atomic_roman_numeral until it mirrors convert_atomic_roman_numeral_to_number 
 # TODO Add logic for capitalizing output roman numeral
 
+class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
+    ...
+
 def convert_number_to_atomic_roman_numeral(n: int) -> str:
     """Turns an integer into its atomic roman numeral representation."""
     match n:
@@ -55,3 +58,5 @@ def convert_number_to_atomic_roman_numeral(n: int) -> str:
             return 'd'
         case 1000:
             return 'm'
+        case _:
+            raise InvalidNumberForAtomicRomanNumeralConversionError("Number can't be directly converted to atomic roman numeral.")
