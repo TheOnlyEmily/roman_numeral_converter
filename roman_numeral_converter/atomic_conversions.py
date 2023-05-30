@@ -40,6 +40,7 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 # TODO Add logic for capitalizing output roman numeral
 # TODO InvalidNumberForAtomicRomanNumeralConversionError provides the offending number as an attribute
 # TODO Create documentation for InvalidNumberForAtomicRomanNumeralConversionError
+# TODO Update documentation for convert_number_to_atomic_roman_numeral regarding lowercase argument
 
 class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
     ...
