@@ -44,3 +44,8 @@ def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_numbers_
 def test_raises_InvalidNumberForAtomicRomanNumberalConversionError_given_0():
     with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
         convert_number_to_atomic_roman_numeral(0)
+
+@given(invalid_number=st.integers(min_value=1001))
+def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_values_greater_than_1000(invalid_number):
+    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
+        convert_number_to_atomic_roman_numeral(invalid_number)
