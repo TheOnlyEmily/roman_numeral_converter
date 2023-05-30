@@ -25,7 +25,18 @@ def test_500_converts_to_d():
 def test_1000_converts_to_m():
     assert convert_number_to_atomic_roman_numeral(1000) == 'm'
 
-@given(invalid_number=st.integers(max_value=0))
+@given(invalid_number=st.integers(max_value=-1))
 def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_negative_number(invalid_number):
     with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
         convert_number_to_atomic_roman_numeral(invalid_number)
+
+@given(invalid_number=st.one_of(
+    st.integers(2, 4), 
+    st.integers(6, 9), 
+    st.integers(11, 49),
+    st.integers(51, 99),
+    st.integers(101, 499),
+    st.integers(501, 999)))
+def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_numbers_with_no_atomic_representation(invalid_number):
+    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
+        convert_number_to_atomic_roman_numeral(invalid_number) 
