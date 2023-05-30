@@ -40,3 +40,7 @@ def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_negative
 def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_numbers_with_no_atomic_representation(invalid_number):
     with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
         convert_number_to_atomic_roman_numeral(invalid_number) 
+
+def test_raises_InvalidNumberForAtomicRomanNumberalConversionError_given_0():
+    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
+        convert_number_to_atomic_roman_numeral(0)
