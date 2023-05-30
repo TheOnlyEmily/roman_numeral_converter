@@ -1,5 +1,6 @@
 # TODO Add encoder-decoder test on two atomic conversion functions 
 # TODO Add logic to InvalidAtomicNumeralError so it can give more specific messages
+# TODO Add that InvalidAtomicRomanNumeralError provides the offending numeral as an attribute
 
 class InvalidAtomicRomanNumeralError(ValueError):
     """An exception raised when convert_atomic_roman_numeral_to_number is given
@@ -37,6 +38,8 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 
 # TODO work on convert_number_to_atomic_roman_numeral until it mirrors convert_atomic_roman_numeral_to_number 
 # TODO Add logic for capitalizing output roman numeral
+# TODO InvalidNumberForAtomicRomanNumeralConversionError provides the offending number as an attribute
+# TODO Create documentation for InvalidNumberForAtomicRomanNumeralConversionError
 
 class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
     ...
