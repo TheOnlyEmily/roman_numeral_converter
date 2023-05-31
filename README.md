@@ -20,6 +20,8 @@ Create a library to convert between roman numerals and numbers.
 # Golossary 
 ## Stack
 In the context of this documentation, a stack refers to a roman numeral that is any combination of atomic roman numerals. 
+## Minimal Stack
+A stack of two atomic roman numerals.
 ## Atomic Roman Numerals
 The roman numerals i, v, x, l, c, d, and m, written by themselves. 
 ## Uniform Stack
