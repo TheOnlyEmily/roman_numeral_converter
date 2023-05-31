@@ -8,6 +8,7 @@ class InvalidAtomicRomanNumeralError(ValueError):
         super().__init__(message)
         self.invalid_numeral = invalid_numeral
 
+# TODO Add documentation regarding convert_atomic_roman_numeral_to_number's arguments and return value
 
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
     """
@@ -40,6 +41,8 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
 
 class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
     ...
+
+# TODO Add documentation regarding convert_number_to_atomic_roman_numeral's arguments and return value
 
 def convert_number_to_atomic_roman_numeral(n: int, lowercase: bool=True) -> str:
     """Turns an integer into its atomic roman numeral representation."""
