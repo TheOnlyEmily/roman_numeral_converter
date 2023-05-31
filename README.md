@@ -1,4 +1,4 @@
-# Pupose
+# Purpose
 Make the storage of roman numerals more memory efficient.
 
 # Goal
