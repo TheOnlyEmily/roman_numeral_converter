@@ -14,3 +14,11 @@ def test_returns_roman_numeral_stack_the_same_length_as_list(number_list):
 def test_returns_different_roman_numerals_for_different_lists_of_numbers(number_list1, number_list2):
     assume(number_list1 != number_list2)
     assert convert_number_list_to_stack(number_list1) != convert_number_list_to_stack(number_list2)
+
+@given(number_list=st.lists(elements=st.sampled_from([1, 5, 10, 50, 100, 500, 1000]), min_size=1))
+def test_returns_lowercase_roman_numerals_by_default(number_list):
+    assert convert_number_list_to_stack(number_list).islower()
+
+@given(number_list=st.lists(elements=st.sampled_from([1, 5, 10, 50, 100, 500, 1000]), min_size=1))
+def test_returns_uppercase_roman_numeral_when_argument_lowercase_is_false(number_list):
+    assert convert_number_list_to_stack(number_list, lowercase=False).isupper()
