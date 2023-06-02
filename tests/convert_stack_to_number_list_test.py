@@ -3,6 +3,10 @@ from hypothesis import given, assume
 from roman_numeral_converter.stack_conversions import convert_stack_to_number_list
 
 @given(roman_numeral=st.text(alphabet=['i', 'v', 'x', 'l', 'c', 'd', 'm']))
+def test_takes_a_roman_numeral_and_returns_a_list(roman_numeral):
+    assert type(convert_stack_to_number_list(roman_numeral)) is list
+
+@given(roman_numeral=st.text(alphabet=['i', 'v', 'x', 'l', 'c', 'd', 'm']))
 def test_returns_a_list_of_equal_length_to_input_roman_numeral_string(roman_numeral):
     assert len(roman_numeral) == len(convert_stack_to_number_list(roman_numeral))
 
