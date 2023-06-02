@@ -7,15 +7,14 @@ Create a library to convert between roman numerals and numbers.
 ## Milestones
 1. Convert the roman numerals i, v, x, l, c, d, and m to numbers. 
 1. Convert the numbers 1, 5, 50, 100, 500, and 1000 into roman numerals. 
-1. Implement code that indicates if a given roman numeral can be uniformly stacked. 
-1. Implement code that indicates if a given uniform stacking of roman numerals is valid. 
-1. Convert uniformly stacked roman numerals to numbers.
-1. Implement code that indicates if a given indo-european numeral is the result of uniform stacking. 
-1. Implement code that indicates which roman numeral was uniformly stacked to create a given indo-european numeral. 
-1. Implement code that indicates how many roman numerals where uniformly stacked to create a given indo-european numeral. 
-1. Convert a numbers numeral to a uniform stacking of roman numerals.
-1. Implement code that indicates if a given non-uniform subtractive stacking of roman numerals is valid.
-1. Convert a non-uniform subtractive stack of roman numerals to numbers.
+1. Convert a stack of roman numerals to a list of converted atomic roman numerals.
+1. Convert a list of converted atomic roman numerals to a stack of roman numerals.
+1. Convert a minimal subtractive stack of roman numerals into a number.
+1. Convert a number into a minimal subtractive stack of roman numerals.
+1. Convert a minimal additive stack of roman numerals into a number.
+1. Convert a number into a minimal additive stack of roman numerals.
+1. Convert a uniform stack of roman numerals into a number.
+1. Convert a number into a uniform stack of roman numerals.
 
 # Golossary 
 ## Stack
@@ -28,5 +27,7 @@ The roman numerals i, v, x, l, c, d, and m, written by themselves.
 A stack that consists of the same atomic roman numeral repeated. 
 ## Non-uniform Stack
 A stack that includes at least two different atomic roman numerals.
-## Subtractive Non-uniform Stack
-A non-uniform stack where there is a single or uniform stack of roman numerals that preceed an atomic roman numeral that has a greater value than that of the atomic roman numerals that make up to preceeding uniform stack.
+## Subtractive Stack
+A stack where numeric conversion is accomplished by only subtracting the values of its atomic roman numerals. 
+## Additive Stack
+A stack where numeric conversion is accomplished by only adding the values of its atomic roman numerals.
