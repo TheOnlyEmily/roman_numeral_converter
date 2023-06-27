@@ -1,13 +1,3 @@
-# TODO Add logic to InvalidAtomicNumeralError so it can give more specific messages
-
-class InvalidAtomicRomanNumeralError(ValueError):
-    """An exception raised when convert_atomic_roman_numeral_to_number is given
-    an invalid atomic roman numeral."""
-
-    def __init__(self, invalid_numeral: str, message: str="invalid atomic roman numeral") -> None:
-        super().__init__(message)
-        self.invalid_numeral = invalid_numeral
-
 # TODO Add documentation regarding convert_atomic_roman_numeral_to_number's arguments and return value
 
 def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
@@ -32,15 +22,6 @@ def convert_atomic_roman_numeral_to_number(roman_numeral: str) -> int:
             return 500
         case 'm':
             return 1000
-        case _:
-            raise InvalidAtomicRomanNumeralError(roman_numeral)
-
-# TODO InvalidNumberForAtomicRomanNumeralConversionError provides the offending number as an attribute
-# TODO Create documentation for InvalidNumberForAtomicRomanNumeralConversionError
-# TODO Update documentation for convert_number_to_atomic_roman_numeral regarding lowercase argument
-
-class InvalidNumberForAtomicRomanNumeralConversionError(ValueError):
-    ...
 
 # TODO Add documentation regarding convert_number_to_atomic_roman_numeral's arguments and return value
 
@@ -61,6 +42,12 @@ def convert_number_to_atomic_roman_numeral(n: int, lowercase: bool=True) -> str:
             return_value = 'd'
         case 1000:
             return_value = 'm'
-        case _:
-            raise InvalidNumberForAtomicRomanNumeralConversionError("Number can't be directly converted to atomic roman numeral.")
     return return_value if lowercase else return_value.upper()
+
+def is_valid_atomic_roman_numeral(atomic_roman_numeral: str) -> bool:
+    """Returns True if the given atomic roman numeral is valid."""
+    return atomic_roman_numeral.lower() in ['i', 'v', 'x', 'l', 'c', 'd', 'm']
+
+def can_convert_to_atomic_roman_numeral(n: int) -> bool:
+    """Returns True if the given number can be converted to an atomic roman numeral."""
+    return n in [1, 5, 10, 50, 100, 500, 1000]

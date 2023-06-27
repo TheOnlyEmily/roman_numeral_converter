@@ -1,7 +1,7 @@
 import pytest
 from hypothesis import given
 import hypothesis.strategies as st
-from roman_numeral_converter.atomic_conversions import convert_number_to_atomic_roman_numeral, InvalidNumberForAtomicRomanNumeralConversionError
+from roman_numeral_converter.atomic_conversions import convert_number_to_atomic_roman_numeral
 
 
 def test_1_converts_to_i():
@@ -24,31 +24,6 @@ def test_500_converts_to_d():
 
 def test_1000_converts_to_m():
     assert convert_number_to_atomic_roman_numeral(1000) == 'm'
-
-@given(invalid_number=st.integers(max_value=-1))
-def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_negative_number(invalid_number):
-    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
-        convert_number_to_atomic_roman_numeral(invalid_number)
-
-@given(invalid_number=st.one_of(
-    st.integers(2, 4), 
-    st.integers(6, 9), 
-    st.integers(11, 49),
-    st.integers(51, 99),
-    st.integers(101, 499),
-    st.integers(501, 999)))
-def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_numbers_with_no_atomic_representation(invalid_number):
-    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
-        convert_number_to_atomic_roman_numeral(invalid_number) 
-
-def test_raises_InvalidNumberForAtomicRomanNumberalConversionError_given_0():
-    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
-        convert_number_to_atomic_roman_numeral(0)
-
-@given(invalid_number=st.integers(min_value=1001))
-def test_raises_InvalidNumberForAtomicRomanNumeralConversionError_given_values_greater_than_1000(invalid_number):
-    with pytest.raises(InvalidNumberForAtomicRomanNumeralConversionError):
-        convert_number_to_atomic_roman_numeral(invalid_number)
 
 @given(valid_number=st.sampled_from([1, 5, 10, 50, 100, 500, 1000]))
 def test_returns_uppercase_atomic_roman_numeral_when_the_lowercase_argument_is_false(valid_number):
